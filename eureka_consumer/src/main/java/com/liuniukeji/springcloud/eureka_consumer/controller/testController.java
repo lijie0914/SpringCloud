@@ -1,9 +1,11 @@
 package com.liuniukeji.springcloud.eureka_consumer.controller;
 
+import com.liuniukeji.springcloud.eureka_consumer.feign.testFeign;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
@@ -26,6 +28,10 @@ public class testController {
     @Autowired
     private RestTemplate ribbonRestTemplate;
 
+    // 使用feign方式调用服务
+    @Autowired
+    private testFeign testFeign;
+
     /**
      * @HystrixCommand(fallbackMethod = "test2") 当demo-api服务故障时返回test2()的执行结果
      */
@@ -33,12 +39,18 @@ public class testController {
     @GetMapping("/test1")
     public String test1() {
         // demo-api 为注册到eureka server上的服务名称即api模块中的spring.application.name
-        return ribbonRestTemplate.getForObject("http://demo-api/test/test1", String.class);
+        String url = "http://demo-api/test/test1";
+        return ribbonRestTemplate.getForObject(url, String.class);
     }
 
     @GetMapping("/test2")
     public String test2() {
         String url = "https://www.baidu.com/";
         return restTemplate.getForObject(url, String.class);
+    }
+
+    @GetMapping("/test3/{name}")
+    public String test3(@PathVariable("name") String name) {
+        return testFeign.hello(name);
     }
 }

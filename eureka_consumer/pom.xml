@@ -16,6 +16,7 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <feign.version>1.4.7.RELEASE</feign.version>
         <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
     </properties>
 
@@ -52,6 +53,12 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+        </dependency>
+        <!-- feign -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-feign</artifactId>
+            <version>${feign.version}</version>
         </dependency>
     </dependencies>
 

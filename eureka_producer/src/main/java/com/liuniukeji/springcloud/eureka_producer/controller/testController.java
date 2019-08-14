@@ -26,4 +26,9 @@ public class testController {
     public String test1() {
         return "服务生产者，端口号:" + ipPort + "，服务名称:" + applicationName;
     }
+
+    @GetMapping("/test2")
+    public String test2(String name) {
+        return "服务生产者，端口号:" + ipPort + "，服务名称:" + applicationName + "，hello " + name;
+    }
 }
