@@ -1,0 +1,5 @@
+spring:
+  profiles:
+    active: server1
+
+## server1和server2两个配置文件中配置了不同的端口号、不同的注册中心地址以及相同的服务名称，分别使用两个配置启动两个服务，可达到集群的效果

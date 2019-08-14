@@ -1,0 +1,16 @@
+server:
+  # 项目端口
+  port: 8761
+spring:
+  application:
+    # 指定注册到eureka server上的服务名称，想要搭建集群，需要设置服务名称，且集群服务的服务名称需要一样
+    name: eureka-server
+eureka:
+  client:
+    # 表示是否从EurekaServer获取注册信息，默认为true。单节点不需要同步其他的EurekaServer节点的数据时设置为false，集群搭建时设置为true。
+    fetch-registry: true
+    # 表示是否将自己注册在EurekaServer上，默认为true，默认情况下，也会将自己当成客户端去注册自己，单节点时设置为false，集群搭建时设置为true。
+    register-with-eureka: true
+    service-url:
+      # 设置Eureka的地址，单节点时ip+端口为当前应用自己，集群搭建时为集群中其他节点的ip+端口，多个使用英文逗号分隔
+      defaultZone: http://localhost:8762/eureka/

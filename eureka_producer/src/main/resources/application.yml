@@ -1,0 +1,12 @@
+server:
+  # \u7AEF\u53E3\u53F7
+  port: 8181
+spring:
+  application:
+    # \u6307\u5B9A\u6CE8\u518C\u5230eureka server\u4E0A\u7684\u670D\u52A1\u540D\u79F0
+    name: demo-api
+eureka:
+  client:
+    service-url:
+      # Eureka\u6CE8\u518C\u4E2D\u5FC3\u7684\u5730\u5740\uFF0C\u591A\u4E2A\u4F7F\u7528\u82F1\u6587\u9017\u53F7\u5206\u9694
+      defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/
