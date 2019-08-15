@@ -16,3 +16,7 @@ zuul:
       path: /api-producer/**
       ## service-id为映射的服务名称，即请求http://localhost:9001/api-producer/**，会映射到demo-api服务中
       service-id: demo-api
+feign:
+  hystrix:
+    ## 开启feign的降级功能，默认是false
+    enabled: true
