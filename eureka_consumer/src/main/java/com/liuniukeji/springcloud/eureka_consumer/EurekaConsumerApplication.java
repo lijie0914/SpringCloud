@@ -21,7 +21,6 @@ public class EurekaConsumerApplication {
     // 整合feign实现了服务调用（ribbon也支持通过restTemplate实现服务调用），
     // 整合hystrix实现了服务调用的容错保护机制，
     // 整合zuul实现了API网关功能。
-    // 想要启动两个应用，达到集群效果的话，需要自己新增一个Configurations，并设置Active Profiles值为server2，然后启动两个应用
 
     public static void main(String[] args) {
         SpringApplication.run(EurekaConsumerApplication.class, args);
