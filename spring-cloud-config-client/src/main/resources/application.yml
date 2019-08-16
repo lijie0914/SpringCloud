@@ -4,3 +4,8 @@ spring:
   application:
     ## \u5BF9\u5E94\u914D\u7F6E\u6587\u4EF6\u7684{application}\u90E8\u5206
     name: jerry-config
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
