@@ -1,9 +1,12 @@
 spring:
   cloud:
     config:
-      ## 配置中心的具体地址
-      uri: http://localhost:8001/
       ## 对应git的分支
       label: master
       ## 对应配置文件的{profile}部分
       profile: dev
+      discovery:
+        # 开启Config服务发现支持
+        enabled: true
+        # 指定server端的name,也就是server端spring.application.name的值
+        service-id: spring-cloud-config-server

@@ -9,3 +9,8 @@ management:
     web:
       exposure:
         include: refresh
+eureka:
+  client:
+    service-url:
+      # Eureka\u6CE8\u518C\u4E2D\u5FC3\u7684\u5730\u5740\uFF0C\u591A\u4E2A\u4F7F\u7528\u82F1\u6587\u9017\u53F7\u5206\u9694
+      defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/
