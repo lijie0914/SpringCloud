@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    config:
+      ## 配置中心的具体地址
+      uri: http://localhost:8001/
+      ## 对应git的分支
+      label: master
+      ## 对应配置文件的{profile}部分
+      profile: dev
