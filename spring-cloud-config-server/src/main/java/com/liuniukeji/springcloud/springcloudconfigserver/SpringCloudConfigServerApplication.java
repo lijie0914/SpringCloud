@@ -17,6 +17,7 @@ public class SpringCloudConfigServerApplication {
     // 3、/{label}/{application}-{profile}.yml
     // 4、/{application}-{profile}.properties
     // 5、/{label}/{application}-{profile}.properties
+    // 想要启动两个应用，达到集群效果的话，需要自己新增一个Configurations，并设置VM options值为-Dserver.port=8003，然后启动两个应用，达到提供高可用的server端支持
 
     public static void main(String[] args) {
         SpringApplication.run(SpringCloudConfigServerApplication.class, args);
