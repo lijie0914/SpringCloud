@@ -10,6 +10,7 @@
         <module name="eureka_consumer" />
         <module name="eureka_producer" />
         <module name="eureka_server" />
+        <module name="spring-cloud-config-server" />
         <module name="springcloud" />
       </profile>
     </annotationProcessing>
@@ -25,6 +26,7 @@
       <module name="eureka_producer" options="-parameters" />
       <module name="eureka_server" options="-parameters" />
       <module name="eureka_server_slave" options="-parameters" />
+      <module name="spring-cloud-config-server" options="-parameters" />
       <module name="springcloud" options="-parameters" />
       <module name="zuul" options="-parameters" />
     </option>

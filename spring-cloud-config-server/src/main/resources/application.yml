@@ -1,0 +1,17 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: spring-cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          # \u914D\u7F6Egit\u4ED3\u5E93\u7684\u5730\u5740
+          uri: http://git.liuniukeji.com/Java_EE/config/
+          # git\u4ED3\u5E93\u5730\u5740\u4E0B\u7684\u76F8\u5BF9\u5730\u5740\uFF0C\u53EF\u4EE5\u914D\u7F6E\u591A\u4E2A\uFF0C\u7528,\u5206\u5272\u3002
+          search-paths: jerry
+          # git\u4ED3\u5E93\u7684\u8D26\u53F7
+          username: lijie
+          # git\u4ED3\u5E93\u7684\u5BC6\u7801
+          password: a1234567
