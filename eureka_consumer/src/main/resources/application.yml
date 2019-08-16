@@ -20,3 +20,9 @@ feign:
   hystrix:
     ## 开启feign的降级功能，默认是false
     enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        ## management.endpoints.web.exposure.include这个是用来暴露 endpoints 的。由于 endpoints 中会包含很多敏感信息，除了 health 和 info 两个支持 web 访问外，其他的默认不支持 web 访问。
+        include: ["health","info","hystrix.stream"]
