@@ -69,6 +69,11 @@
             <artifactId>spring-cloud-starter-feign</artifactId>
             <version>${feign.version}</version>
         </dependency>
+        <!-- zipkin -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>

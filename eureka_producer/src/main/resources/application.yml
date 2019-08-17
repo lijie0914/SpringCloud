@@ -4,6 +4,13 @@ spring:
   application:
     # 指定注册到eureka server上的服务名称
     name: demo-api
+  zipkin:
+    # 指定server端的地址
+    base-url: http://localhost:9411/
+  sleuth:
+    sampler:
+      # 指定采样百分比，默认0.1，改成1.0表示所有数据都采用
+      probability: 1.0
 eureka:
   client:
     service-url:
