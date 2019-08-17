@@ -8,7 +8,9 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/
 ## zuul配置
+# zuul默认配置：默认情况下，Zuul会代理所有注册到Eureka Server的微服务，并且Zuul的路由规则如下：http://ZUUL_HOST:ZUUL_PORT/微服务在Eureka上的serviceId/**会被转发到serviceId对应的微服务。
 zuul:
+  ## zuul自定义配置
   routes:
     ## api-a为路由别名，无其他意义，多个时保证不重复即可
     api-a:
