@@ -1,11 +1,13 @@
 package com.liuniukeji.springcloud.eureka_consumer;
 
+import com.liuniukeji.springcloud.eureka_consumer.filter.TokenFilter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.context.annotation.Bean;
 
 //@EnableCircuitBreaker
 @EnableHystrixDashboard
@@ -32,4 +34,8 @@ public class EurekaConsumerApplication {
         SpringApplication.run(EurekaConsumerApplication.class, args);
     }
 
+    @Bean
+    public TokenFilter tokenFilter() {
+        return new TokenFilter();
+    }
 }
