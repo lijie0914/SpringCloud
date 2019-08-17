@@ -7,16 +7,16 @@ spring:
     config:
       server:
         git:
-          # \u914D\u7F6Egit\u4ED3\u5E93\u7684\u5730\u5740
+          # 配置git仓库的地址
           uri: http://git.liuniukeji.com/Java_EE/config/
-          # git\u4ED3\u5E93\u5730\u5740\u4E0B\u7684\u76F8\u5BF9\u5730\u5740\uFF0C\u53EF\u4EE5\u914D\u7F6E\u591A\u4E2A\uFF0C\u7528,\u5206\u5272\u3002
+          # git仓库地址下的相对地址，可以配置多个，用,分割。
           search-paths: jerry
-          # git\u4ED3\u5E93\u7684\u8D26\u53F7
+          # git仓库的账号
           username: lijie
-          # git\u4ED3\u5E93\u7684\u5BC6\u7801
+          # git仓库的密码
           password: a1234567
 eureka:
   client:
     service-url:
-      # Eureka\u6CE8\u518C\u4E2D\u5FC3\u7684\u5730\u5740\uFF0C\u591A\u4E2A\u4F7F\u7528\u82F1\u6587\u9017\u53F7\u5206\u9694
+      # Eureka注册中心的地址，多个使用英文逗号分隔
       defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/

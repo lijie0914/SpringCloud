@@ -1,0 +1,9 @@
+//忽略以XXX结尾的文件
+*.prefs 
+*.project 
+*.classpath
+*.iml
+
+ //忽略XXX文件夹及文件夹下文件
+.settings
+.idea
