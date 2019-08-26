@@ -103,4 +103,11 @@ tx-lcn:
     loadbalancer:
       dtx:
         enabled: true
-
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            # 延长hystix的连接超时时间，默认1000ms
+            timeoutInMilliseconds: 5000
