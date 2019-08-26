@@ -111,3 +111,6 @@ hystrix:
           thread:
             # 延长hystix的连接超时时间，默认1000ms
             timeoutInMilliseconds: 5000
+ribbon:
+  # 关闭Ribbon的重试机制
+  MaxAutoRetriesNextServer: 0
