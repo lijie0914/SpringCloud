@@ -21,6 +21,7 @@ import org.springframework.context.annotation.Bean;
 public class EurekaConsumerApplication {
 
     /**
+     * Spring Boot/Spring Cloud时代后，应用开发基本遵循三板斧：加依赖！加配置！加注解！业务代码该咋写还咋写！
      * 一、启动类注解作用：
      * // 1、@EnableCircuitBreaker 启动断路器（和@EnableHystrix功能一样，两者选一即可）
      * // 2、@EnableHystrixDashboard 开启对Hystrix的实时监控
@@ -41,6 +42,7 @@ public class EurekaConsumerApplication {
      * 6.2、服务端：官方提供了在ZipKin Server服务的jar，直接下载运行即可，地址：https://zipkin.io/pages/quickstart ，找到latest release 进行下载，
      * 下载完成之后，打开cmd命令台，执行java -jar zipkin-server-xxx.jar 启动 ZipKin Server 应用，启动成功之后，访问地址http://localhost:9411/
      * 6.3、客户端：只需要添加依赖、添加配置即可
+     * 7、整合TX-LCN分布式事务框架实现了分布式事务
      */
 
     public static void main(String[] args) {
