@@ -21,6 +21,8 @@
         <druid.version>1.1.18</druid.version>
         <dynamic-datasource.version>2.4.2</dynamic-datasource.version>
         <log4j.version>1.2.17</log4j.version>
+        <mybatis.version>2.1.0</mybatis.version>
+        <txlcn.version>5.0.2.RELEASE</txlcn.version>
     </properties>
 
     <dependencies>
@@ -69,6 +71,23 @@
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>${log4j.version}</version>
+        </dependency>
+        <!-- mybatis-spring-boot-starter -->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>${mybatis.version}</version>
+        </dependency>
+        <!-- txlcn 分布式事务 -->
+        <dependency>
+            <groupId>com.codingapi.txlcn</groupId>
+            <artifactId>txlcn-tc</artifactId>
+            <version>${txlcn.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.codingapi.txlcn</groupId>
+            <artifactId>txlcn-txmsg-netty</artifactId>
+            <version>${txlcn.version}</version>
         </dependency>
     </dependencies>
 

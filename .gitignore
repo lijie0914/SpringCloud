@@ -7,3 +7,4 @@
  //忽略XXX文件夹及文件夹下文件
 .settings
 .idea
+.txlcn

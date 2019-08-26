@@ -1,9 +1,8 @@
 package com.liuniukeji.springcloud.eureka_consumer.controller;
 
-import com.liuniukeji.springcloud.eureka_consumer.feign.testFeign;
+import com.liuniukeji.springcloud.eureka_consumer.feign.TestFeign;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +17,7 @@ import org.springframework.web.client.RestTemplate;
  */
 @RestController
 @RequestMapping("test")
-public class testController {
+public class TestController {
 
     // 普通的restTemplate
     @Autowired
@@ -30,7 +29,7 @@ public class testController {
 
     // 使用feign方式调用服务
     @Autowired
-    private testFeign testFeign;
+    private TestFeign testFeign;
 
     /**
      * @HystrixCommand(fallbackMethod = "test2") 当demo-api服务故障时返回test2()的执行结果

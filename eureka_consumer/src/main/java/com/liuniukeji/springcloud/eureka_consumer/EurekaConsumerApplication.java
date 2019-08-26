@@ -1,6 +1,8 @@
 package com.liuniukeji.springcloud.eureka_consumer;
 
+import com.codingapi.txlcn.tc.config.EnableDistributedTransaction;
 import com.liuniukeji.springcloud.eureka_consumer.filter.TokenFilter;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
@@ -9,12 +11,13 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 
-//@EnableCircuitBreaker
+@EnableDistributedTransaction
 @EnableHystrixDashboard
 @EnableFeignClients
 @EnableZuulProxy
 @EnableHystrix
 @SpringBootApplication
+@MapperScan("com.liuniukeji.springcloud.eureka_consumer.mapper")
 public class EurekaConsumerApplication {
 
     /**
@@ -24,6 +27,7 @@ public class EurekaConsumerApplication {
      * // 3、@EnableFeignClients 开启feign 服务调用
      * // 4、@EnableZuulProxy 声明开启zuul API网关
      * // 5、@EnableHystrix 开启Hystrix熔断器功能 （和@EnableCircuitBreaker功能一样，两者选一即可）
+     * // 6、@EnableDistributedTransaction 开启事务客户端
      * PS：从Spring Cloud Edgware版本开始，eureka的服务提供者/服务消费者的启动类上不需要添加@EnableDiscoveryClient 或@EnableEurekaClient
      * 二、当前应用为服务消费者，负责消费（即调用）eureka中的服务生产者
      * 三、整合组件：

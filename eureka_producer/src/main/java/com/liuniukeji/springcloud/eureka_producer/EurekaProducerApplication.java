@@ -1,9 +1,11 @@
 package com.liuniukeji.springcloud.eureka_producer;
 
 import com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure;
+import com.codingapi.txlcn.tc.config.EnableDistributedTransaction;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@EnableDistributedTransaction
 @SpringBootApplication(exclude = DruidDataSourceAutoConfigure.class)
 public class EurekaProducerApplication {
 

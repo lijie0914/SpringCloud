@@ -74,3 +74,20 @@ druid:
   login:
     password: root
     username: root
+#lcn分布式事务
+tx-lcn:
+  client:
+    chain-level: 3
+    dtx-aspect-order: 0
+    manager-address: 127.0.0.1:8070
+    resource-order: 0
+  logger:
+    driver-class-name: ${spring.datasource.dynamic.datasource.master.driver-class-name}
+    enabled: false
+    jdbc-url: ${spring.datasource.dynamic.datasource.master.url}
+    password: ${spring.datasource.dynamic.datasource.master.password}
+    username: ${spring.datasource.dynamic.datasource.master.username}
+  ribbon:
+    loadbalancer:
+      dtx:
+        enabled: true
