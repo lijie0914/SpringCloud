@@ -3,46 +3,49 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.7.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <groupId>com.liuniukeji.springcloud</groupId>
+        <artifactId>parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
     </parent>
-    <groupId>com.liuniukeji.springcloud</groupId>
     <artifactId>eureka_consumer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>eureka_consumer</name>
     <description>Demo project for Eureka Consumer</description>
 
     <properties>
-        <java.version>1.8</java.version>
-        <feign.version>1.4.7.RELEASE</feign.version>
-        <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
         <mysql-connector.version>8.0.17</mysql-connector.version>
         <druid.version>1.1.18</druid.version>
         <mybatis.version>2.1.0</mybatis.version>
-        <log4j.version>1.2.17</log4j.version>
+        <feign.version>1.4.7.RELEASE</feign.version>
         <txlcn.version>5.0.2.RELEASE</txlcn.version>
     </properties>
 
     <dependencies>
+        <!-- mysql-connector-java mysql数据库连接驱动 -->
         <dependency>
-            <groupId>com.liuniukeji.springcloud</groupId>
-            <artifactId>common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql-connector.version}</version>
+        </dependency>
+
+        <!-- druid 阿里开源的数据库连接池 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>${druid.version}</version>
+        </dependency>
+
+        <!-- mybatis-spring-boot-starter -->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>${mybatis.version}</version>
         </dependency>
 
         <!-- eureka 依赖中包含了ribbon依赖，所以没有再单独依赖ribbon -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-        </dependency>
-
-        <!-- spring boot test -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
         </dependency>
 
         <!-- hystrix -->
@@ -54,6 +57,7 @@
             <groupId>com.netflix.hystrix</groupId>
             <artifactId>hystrix-javanica</artifactId>
         </dependency>
+
         <!-- hystrix-dashboard 对Hystrix进行实时监控的工具 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -63,52 +67,26 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
+
         <!-- zuul -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
         </dependency>
+
         <!-- feign -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-feign</artifactId>
             <version>${feign.version}</version>
         </dependency>
+
         <!-- zipkin -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-zipkin</artifactId>
         </dependency>
-        <!-- log4j -->
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>${log4j.version}</version>
-        </dependency>
-        <!-- lombok -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <!-- mysql-connector-java mysql数据库连接驱动 -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>${mysql-connector.version}</version>
-        </dependency>
-        <!-- druid 阿里开源的数据库连接池 -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid-spring-boot-starter</artifactId>
-            <version>${druid.version}</version>
-        </dependency>
-        <!-- mybatis-spring-boot-starter -->
-        <dependency>
-            <groupId>org.mybatis.spring.boot</groupId>
-            <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>${mybatis.version}</version>
-        </dependency>
+
         <!-- txlcn 分布式事务 -->
         <dependency>
             <groupId>com.codingapi.txlcn</groupId>
@@ -120,27 +98,7 @@
             <artifactId>txlcn-txmsg-netty</artifactId>
             <version>${txlcn.version}</version>
         </dependency>
+
     </dependencies>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>
