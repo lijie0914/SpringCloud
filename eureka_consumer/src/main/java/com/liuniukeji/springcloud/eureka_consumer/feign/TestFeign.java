@@ -22,5 +22,5 @@ public interface TestFeign {
     public String hello(@RequestParam(value = "name") String name);
 
     @RequestMapping(value = "/test/testTransaction")
-    public String testTransaction();
+    public String testTransaction(@RequestParam(value = "value") String value);
 }

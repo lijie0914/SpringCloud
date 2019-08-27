@@ -40,7 +40,7 @@ public class DemoServiceImpl implements DemoService {
     @Transactional //本地事务注解
     public String execute(String value, String exFlag) {
 
-        String testTransaction = testFeign.testTransaction();
+        String testTransaction = testFeign.testTransaction(value);
 
         // Local transaction
         TDemo demo = new TDemo();

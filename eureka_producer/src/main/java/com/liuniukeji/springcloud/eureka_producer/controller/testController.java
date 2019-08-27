@@ -48,8 +48,8 @@ public class testController {
     @GetMapping("/testTransaction")
     @LcnTransaction //分布式事务注解
     @Transactional //本地事务注解
-    public String testTransaction() {
-        userService.addMaster();
+    public String testTransaction(String value) {
+        userService.addMaster(value);
         return "生产者 分布式事务测试类";
     }
 }

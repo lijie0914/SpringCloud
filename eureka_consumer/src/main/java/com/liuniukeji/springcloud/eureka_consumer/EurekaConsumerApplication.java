@@ -1,5 +1,6 @@
 package com.liuniukeji.springcloud.eureka_consumer;
 
+import com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure;
 import com.codingapi.txlcn.tc.config.EnableDistributedTransaction;
 import com.liuniukeji.springcloud.eureka_consumer.filter.TokenFilter;
 import org.mybatis.spring.annotation.MapperScan;
@@ -16,7 +17,7 @@ import org.springframework.context.annotation.Bean;
 @EnableFeignClients
 @EnableZuulProxy
 @EnableHystrix
-@SpringBootApplication
+@SpringBootApplication(exclude = DruidDataSourceAutoConfigure.class)
 @MapperScan("com.liuniukeji.springcloud.eureka_consumer.mapper")
 public class EurekaConsumerApplication {
 

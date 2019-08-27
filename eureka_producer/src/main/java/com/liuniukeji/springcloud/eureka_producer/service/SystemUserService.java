@@ -18,5 +18,5 @@ public interface SystemUserService {
 
     void add();
 
-    void addMaster();
+    void addMaster(String value);
 }

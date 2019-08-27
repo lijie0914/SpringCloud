@@ -25,7 +25,7 @@ public class SystemUserController {
 
     @GetMapping("/addMaster")
     public String addMaster() {
-        userService.addMaster();
+        userService.addMaster("123456");
         return "success";
     }
 }

@@ -45,7 +45,7 @@ public class SystemUserServiceImpl implements SystemUserService {
 
     @Override
     @DS("master")
-    public void addMaster() {
-        jdbcTemplate.execute("insert into system_user (username,password) values ('jerry','111')");
+    public void addMaster(String value) {
+        jdbcTemplate.update("insert into system_user (username,password) values ('jerry',?)", new String[]{value});
     }
 }

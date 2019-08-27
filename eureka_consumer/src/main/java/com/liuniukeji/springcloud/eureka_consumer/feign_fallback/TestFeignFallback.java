@@ -20,7 +20,7 @@ public class TestFeignFallback implements TestFeign {
     }
 
     @Override
-    public String testTransaction() {
-        return "testTransaction 我是默认数据 ";
+    public String testTransaction(String value) {
+        return "testTransaction 我是默认数据 " + value;
     }
 }
