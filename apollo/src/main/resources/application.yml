@@ -1,0 +1,16 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: apolloDemo
+app:
+  ## 配置中心AppId
+  id: apollo-demo
+apollo:
+  ## Config Service应用地址
+  meta: http://192.168.2.105:8080
+  bootstrap:
+    # 在项目启动的bootstrap阶段，向Spring容器注入被托管的application.properties文件的配置信息
+    enable: true
+    ## 配置中心namespace
+    namespaces: application
