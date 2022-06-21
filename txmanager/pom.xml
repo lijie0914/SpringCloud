@@ -13,7 +13,7 @@
     <description>Demo project for TxManager</description>
 
     <properties>
-        <mysql-connector.version>8.0.17</mysql-connector.version>
+        <mysql-connector.version>8.0.28</mysql-connector.version>
         <druid.version>1.1.18</druid.version>
         <txlcn.version>5.0.2.RELEASE</txlcn.version>
     </properties>
